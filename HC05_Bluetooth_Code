@@ -16,7 +16,7 @@ void loop() {
   int yVal = analogRead(A1);
   buttonState = digitalRead(buttonPin);
   
-  BT.println(String(xVal) + "|" + String(yVal) + "|" + String(buttonState)); //else string BT.print(); together
+  BT.println(String(xVal) + "|" + String(yVal) + "|" + String(buttonState)); 
 
   Serial.println(String(xVal) + "|" + String(yVal) + "|" + (buttonState == LOW ? "LOW" : "HIGH"));
 
