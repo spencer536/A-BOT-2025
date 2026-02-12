@@ -2,7 +2,7 @@
 #include <math.h>
 SoftwareSerial BT(10, 11);
 
-int joystickbuttonLED = 3; //indicator of 
+int joystickbuttonLED = 3;  
 int xVal = 0;
 int yVal = 0;
 int buttonState = 1;
@@ -52,8 +52,6 @@ void loop() {
     xVal = dataString.substring(0,firstBreak).toInt();
     yVal = dataString.substring(firstBreak+1,secondBreak).toInt();
     buttonState = dataString.substring(secondBreak+1).toInt(); // 1 usually (unclicked), 0 when pressed --not LOW/HIGH values (or rather they're interchangable)
-    //Serial.print(buttonState);
-    //Serial.print("\n");
   }
 
   //determine Joystick's buttonState
@@ -68,7 +66,7 @@ void loop() {
   analogWrite(motorREna, speedValue+55);
   Serial.println(String(xVal) + "|" + String(yVal) + "|" + String(speedValue+55));
 
-  // will be jumbled based on direction of my joystick!!!
+  // will be jumbled based on direction of the joystick!!!
   if (xVal == 0 && yVal ==0){
     digitalWrite(motorLpin1, LOW);
     digitalWrite(motorLpin2, LOW);
@@ -116,6 +114,4 @@ void loop() {
     digitalWrite(motorRpin1, LOW);
     digitalWrite(motorRpin2, LOW);
   }
-
-
 }
