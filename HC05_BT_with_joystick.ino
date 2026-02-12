@@ -1,0 +1,25 @@
+
+#include <SoftwareSerial.h>
+SoftwareSerial BT(11,10);
+
+int buttonPin = 4; //SW for joystick
+int buttonState;
+
+void setup() {
+  BT.begin(9600);      
+  Serial.begin(9600); 
+  pinMode(buttonPin, INPUT_PULLUP);
+}
+
+void loop() {
+  int xVal = analogRead(A0);
+  int yVal = analogRead(A1);
+  buttonState = digitalRead(buttonPin);
+  
+  BT.println(String(xVal) + "|" + String(yVal) + "|" + String(buttonState)); //else string BT.print(); together
+
+  Serial.println(String(xVal) + "|" + String(yVal) + "|" + (buttonState == LOW ? "LOW" : "HIGH"));
+
+  delay(150); 
+
+}
