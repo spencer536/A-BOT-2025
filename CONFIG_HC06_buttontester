@@ -1,6 +1,5 @@
 #include <SoftwareSerial.h>
 
-// HC-06 connection pins
 SoftwareSerial BT(10, 11); // RX, TX
 
 int ledPin = 3; // optional: LED to visualize button state
@@ -24,7 +23,6 @@ void loop() {
       connected = true;
     }
 
-    
     // Update LED or output based on button state
     if (c == '0') digitalWrite(ledPin, LOW);   // button pressed
     if (c == '1') digitalWrite(ledPin, HIGH);  // button not pressed
