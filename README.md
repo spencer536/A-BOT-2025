@@ -12,3 +12,6 @@ Steps (roughly)
 
 All other code (not involving Bluetooth), is in association with a Joystick and motors (which already have many resources online).
 
+
+P.S.
+The CONFIG Files are for testing purposes. Specifically, the 'CONFIG_buttontester' files sends the signal of a single button to the HC06.
